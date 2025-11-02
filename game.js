@@ -181,7 +181,7 @@ const game = {
         e.dataset.type = 'enemy';
         e.style.animationDuration = d.enemySpeed + 'ms';
         if (Math.random() > 0.75) {
-            e.style.bottom = (window.innerWidth <= 480 ? '170px' : '210px');
+            e.style.bottom = (window.innerWidth <= 480 ? '230px' : '270px');
         }
         document.getElementById('game-area').appendChild(e);
 
@@ -295,7 +295,7 @@ const game = {
             a.className = 'ally';
             a.style.backgroundImage = `url('${d.ally.img}')`;
             a.style.left = '40%';
-            a.style.bottom = '140px';
+            a.style.bottom = '190px';
             document.getElementById('game-area').appendChild(a);
 
             this.playFullAudio(d.ally.entry).then(() => {
@@ -325,7 +325,7 @@ const game = {
                 a1.className = 'ally';
                 a1.style.backgroundImage = `url('${ally.img}')`;
                 a1.style.left = '35%';
-                a1.style.bottom = '130px';
+                a1.style.bottom = '180px';
                 document.getElementById('game-area').appendChild(a1);
 
                 this.playFullAudio(ally.music).then(() => {
@@ -351,7 +351,7 @@ const game = {
                 a2.className = 'ally';
                 a2.style.backgroundImage = `url('${ally.img}')`;
                 a2.style.left = '50%';
-                a2.style.bottom = '130px';
+                a2.style.bottom = '180px';
                 document.getElementById('game-area').appendChild(a2);
 
                 this.playFullAudio(ally.music).then(() => {

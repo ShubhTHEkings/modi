@@ -107,7 +107,7 @@ button:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 150px;
     background: linear-gradient(to bottom, #654321, #8B4513, #654321);
     border-top: 5px solid #228B22;
     z-index: 1;
@@ -117,7 +117,7 @@ button:hover {
 #player {
     position: absolute;
     left: 80px;
-    bottom: 100px;
+    bottom: 150px;
     width: 85px;
     height: 85px;
     background-size: contain;
@@ -133,18 +133,11 @@ button:hover {
 }
 
 @keyframes jump {
-
-    0%,
-    100% {
-        bottom: 100px;
-    }
-
-    50% {
-        bottom: 280px;
-    }
+    0%, 100% { bottom: 150px; }
+    50% { bottom: 320px; }
 }
 
-#player.protected {
+#player.shield::before {
     animation: shield 0.5s infinite;
     filter: drop-shadow(0 0 25px gold);
 }
@@ -163,7 +156,7 @@ button:hover {
 
 .enemy {
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
     width: 75px;
     height: 75px;
     background-size: contain;
@@ -189,7 +182,7 @@ button:hover {
 
 .powerup {
     position: absolute;
-    bottom: 200px;
+    bottom: 260px;
     width: 50px;
     height: 50px;
     background: radial-gradient(circle, #FFD700, #FFA500);
@@ -222,15 +215,8 @@ button:hover {
 }
 
 @keyframes allyFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 #hud {
