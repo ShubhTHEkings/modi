@@ -116,10 +116,10 @@ button:hover {
 
 #player {
     position: absolute;
-    left: 15%;
+    left: 12%;
     bottom: calc(25vh + 10px);
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -157,8 +157,8 @@ button:hover {
 .enemy {
     position: absolute;
     bottom: calc(25vh + 10px);
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -167,7 +167,7 @@ button:hover {
 }
 
 .enemy.running {
-    animation: slide 4s linear;
+    animation: slide 3.8s linear;
 }
 
 @keyframes slide {
@@ -183,15 +183,15 @@ button:hover {
 .powerup {
     position: absolute;
     bottom: calc(25vh + 120px);
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background: radial-gradient(circle, #FFD700, #FFA500);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    animation: slide 4.5s linear, spin 1.5s linear infinite;
+    animation: slide 4.3s linear, spin 1.5s linear infinite;
     z-index: 8;
     box-shadow: 0 0 25px #FFD700;
 }
@@ -506,74 +506,91 @@ button:hover {
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
     h1 {
-        font-size: 2.1em;
+        font-size: 2.3em;
+        margin: 12px;
     }
 
     button {
-        padding: 20px 38px;
-        font-size: 1.2em;
-        min-height: 68px;
+        padding: 22px 42px;
+        font-size: 1.3em;
+        min-height: 75px;
+    }
+
+    .info-box {
+        font-size: 1.15em;
+        padding: 16px 24px;
+        line-height: 1.7;
+    }
+
+    #story {
+        font-size: 0.95em;
+        padding: 15px;
     }
 
     #player {
-        width: 65px;
-        height: 65px;
-        left: 50px;
+        width: 75px;
+        height: 75px;
+        left: 10%;
     }
 
     .enemy {
-        width: 58px;
-        height: 58px;
+        width: 68px;
+        height: 68px;
     }
 
     .ally {
-        width: 72px;
-        height: 72px;
+        width: 80px;
+        height: 80px;
     }
 
     .btn {
-        padding: 20px 22px;
-        font-size: 1.1em;
-        min-width: 105px;
-        min-height: 72px;
+        padding: 22px 24px;
+        font-size: 1.15em;
+        min-width: 110px;
+        min-height: 75px;
     }
 
     #hud {
-        font-size: 0.85em;
-        padding: 8px 12px;
+        font-size: 0.9em;
+        padding: 10px 14px;
     }
 
     .health-bar {
-        width: 130px;
-        height: 22px;
+        width: 140px;
+        height: 24px;
     }
 
     .health-fill {
-        font-size: 0.8em;
-        line-height: 22px;
+        font-size: 0.85em;
+        line-height: 24px;
     }
 
     .ground {
-        height: 100px;
+        height: 28vh;
     }
 
     #player {
-        bottom: 100px;
+        bottom: calc(28vh + 10px);
     }
 
     .enemy {
-        bottom: 100px;
+        bottom: calc(28vh + 10px);
     }
 
     .powerup {
-        bottom: 230px;
+        bottom: calc(28vh + 100px);
     }
 
     #controls {
-        bottom: 12px;
-        gap: 10px;
+        bottom: 15px;
+        gap: 12px;
         width: 96%;
+        padding: 0 2%;
     }
 
     #fullscreen-btn {
@@ -599,22 +616,15 @@ button:hover {
     }
 
     @keyframes jump {
-
-        0%,
-        100% {
-            bottom: 100px;
-        }
-
-        50% {
-            bottom: 260px;
-        }
+        0%, 100% { bottom: calc(28vh + 10px); }
+        50% { bottom: calc(28vh + 170px); }
     }
 }
 
 /* Ultra Small Mobile */
 @media (max-width: 380px) {
     h1 {
-        font-size: 1.8em;
+        font-size: 1.9em;
     }
 
     button {
@@ -630,32 +640,34 @@ button:hover {
     }
 
     #player {
-        width: 58px;
-        height: 58px;
-        left: 40px;
+        width: 62px;
+        height: 62px;
+        left: 8%;
     }
 
     .enemy {
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
     }
 
     .ally {
-        width: 65px;
-        height: 65px;
+        width: 68px;
+        height: 68px;
     }
 }
 
 /* Extra Touch Optimization */
 @media (hover: none) and (pointer: coarse) {
     button {
-        min-height: 80px;
-        padding: 26px 60px;
+        min-height: 82px;
+        padding: 28px 60px;
+        font-size: 1.35em;
     }
 
     .btn {
-        min-height: 80px;
-        padding: 26px 34px;
+        min-height: 82px;
+        padding: 28px 36px;
+        font-size: 1.2em;
     }
 
     #controls {

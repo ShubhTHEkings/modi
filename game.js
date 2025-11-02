@@ -39,9 +39,9 @@ const game = {
             lose: "modi lose.png",
             loseMusic: "modi lose.mpeg",
             time: 60,
-            spawnRate: 2800,
+            spawnRate: 2660,
             damage: 8,
-            enemySpeed: 4000
+            enemySpeed: 3800
         },
         2: {
             title: "LEVEL 2: TRADE WAR (INTERMEDIATE)",
@@ -65,9 +65,9 @@ const game = {
             lose: "modi lose.png",
             loseMusic: "modi lose.mpeg",
             time: 72,
-            spawnRate: 2200,
+            spawnRate: 2090,
             damage: 12,
-            enemySpeed: 3500
+            enemySpeed: 3325
         }
     },
 
@@ -221,7 +221,7 @@ const game = {
             }
         }, 50);
 
-        setTimeout(() => { if (p.parentElement) p.remove(); clearInterval(check); }, 4500);
+        setTimeout(() => { if (p.parentElement) p.remove(); clearInterval(check); }, 4275);
     },
 
     jump() {
