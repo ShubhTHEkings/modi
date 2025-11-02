@@ -25,19 +25,19 @@ const game = {
 <p><b>🛡️ Thanos gives 15s protection</b></p>
 <p><b>Controls:</b> Jump | Attack (5x) | Call Thanos</p>`,
             player: "modi.png",
-            modiMusic: "modiplaying background music.mp3",
+            modiMusic: "modiplaying background music.mpeg",
             enemy: "rhaul.png",
-            enemyMusic: "rhoul back ground.mp3",
-            ally: {
-                img: "thanos.png",
-                entry: "thanos entry.mp3",
-                special: "thanos and mode when come together to.mp3"
+            enemyMusic: "Rahul background.mp3",
+            ally: { 
+                img: "thanos.png", 
+                entry: "thanos entry .mp3",
+                special: "thanos and mode when come together to .mp3"
             },
             enemyLose: "rhaul lose.mp3",
             win: "meloni modi.png",
-            winMusic: "meloni modi wining song.mp3",
+            winMusic: "meloni modi wining song.mpeg",
             lose: "modi lose.png",
-            loseMusic: "modi lose.mp3",
+            loseMusic: "modi lose.mpeg",
             time: 60,
             spawnRate: 2500,
             damage: 8,
@@ -52,7 +52,7 @@ const game = {
 <p><b>🛡️ Each ally = 15s protection</b></p>
 <p><b>Controls:</b> Jump | Attack (5x) | Call Xi or Putin</p>`,
             player: "modi.png",
-            modiMusic: "modiplaying background music.mp3",
+            modiMusic: "modiplaying background music.mpeg",
             enemy: "trump face image.png",
             enemyMusic: "trump background.mp3",
             allies: [
@@ -61,9 +61,9 @@ const game = {
             ],
             enemyLose: "trump lose.mp3",
             win: "meloni modi.png",
-            winMusic: "meloni modi wining song.mp3",
+            winMusic: "meloni modi wining song.mpeg",
             lose: "modi lose.png",
-            loseMusic: "modi lose.mp3",
+            loseMusic: "modi lose.mpeg",
             time: 72,
             spawnRate: 1900,
             damage: 12,
