@@ -39,9 +39,9 @@ const game = {
             lose: "modi lose.png",
             loseMusic: "modi lose.mpeg",
             time: 60,
-            spawnRate: 2500,
+            spawnRate: 2800,
             damage: 8,
-            enemySpeed: 3500
+            enemySpeed: 4000
         },
         2: {
             title: "LEVEL 2: TRADE WAR (INTERMEDIATE)",
@@ -65,9 +65,9 @@ const game = {
             lose: "modi lose.png",
             loseMusic: "modi lose.mpeg",
             time: 72,
-            spawnRate: 1900,
+            spawnRate: 2200,
             damage: 12,
-            enemySpeed: 3000
+            enemySpeed: 3500
         }
     },
 
@@ -180,8 +180,8 @@ const game = {
         e.style.backgroundImage = `url('${d.enemy}')`;
         e.dataset.type = 'enemy';
         e.style.animationDuration = d.enemySpeed + 'ms';
-        if (Math.random() > 0.75) {
-            e.style.bottom = (window.innerWidth <= 480 ? '230px' : '270px');
+        if (Math.random() > 0.7) {
+            e.style.bottom = (window.innerWidth <= 480 ? 'calc(25vh + 90px)' : 'calc(25vh + 120px)');
         }
         document.getElementById('game-area').appendChild(e);
 
@@ -221,7 +221,7 @@ const game = {
             }
         }, 50);
 
-        setTimeout(() => { if (p.parentElement) p.remove(); clearInterval(check); }, 3000);
+        setTimeout(() => { if (p.parentElement) p.remove(); clearInterval(check); }, 4500);
     },
 
     jump() {
@@ -295,7 +295,7 @@ const game = {
             a.className = 'ally';
             a.style.backgroundImage = `url('${d.ally.img}')`;
             a.style.left = '40%';
-            a.style.bottom = '190px';
+            a.style.bottom = 'calc(25vh + 50px)';
             document.getElementById('game-area').appendChild(a);
 
             this.playFullAudio(d.ally.entry).then(() => {
@@ -325,7 +325,7 @@ const game = {
                 a1.className = 'ally';
                 a1.style.backgroundImage = `url('${ally.img}')`;
                 a1.style.left = '35%';
-                a1.style.bottom = '180px';
+                a1.style.bottom = 'calc(25vh + 40px)';
                 document.getElementById('game-area').appendChild(a1);
 
                 this.playFullAudio(ally.music).then(() => {
@@ -351,7 +351,7 @@ const game = {
                 a2.className = 'ally';
                 a2.style.backgroundImage = `url('${ally.img}')`;
                 a2.style.left = '50%';
-                a2.style.bottom = '180px';
+                a2.style.bottom = 'calc(25vh + 40px)';
                 document.getElementById('game-area').appendChild(a2);
 
                 this.playFullAudio(ally.music).then(() => {

@@ -92,7 +92,7 @@ button:hover {
 }
 
 #game-screen {
-    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 30%, #90EE90 30%, #3CB371 70%, #654321 70%, #8B4513 100%);
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 20%, #90EE90 20%, #3CB371 75%, #654321 75%, #8B4513 100%);
     padding: 0;
 }
 
@@ -107,7 +107,7 @@ button:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 150px;
+    height: 25vh;
     background: linear-gradient(to bottom, #654321, #8B4513, #654321);
     border-top: 5px solid #228B22;
     z-index: 1;
@@ -116,8 +116,8 @@ button:hover {
 
 #player {
     position: absolute;
-    left: 80px;
-    bottom: 150px;
+    left: 15%;
+    bottom: calc(25vh + 10px);
     width: 85px;
     height: 85px;
     background-size: contain;
@@ -133,8 +133,8 @@ button:hover {
 }
 
 @keyframes jump {
-    0%, 100% { bottom: 150px; }
-    50% { bottom: 320px; }
+    0%, 100% { bottom: calc(25vh + 10px); }
+    50% { bottom: calc(25vh + 180px); }
 }
 
 #player.shield::before {
@@ -156,7 +156,7 @@ button:hover {
 
 .enemy {
     position: absolute;
-    bottom: 150px;
+    bottom: calc(25vh + 10px);
     width: 75px;
     height: 75px;
     background-size: contain;
@@ -167,7 +167,7 @@ button:hover {
 }
 
 .enemy.running {
-    animation: slide 3s linear;
+    animation: slide 4s linear;
 }
 
 @keyframes slide {
@@ -182,7 +182,7 @@ button:hover {
 
 .powerup {
     position: absolute;
-    bottom: 260px;
+    bottom: calc(25vh + 120px);
     width: 50px;
     height: 50px;
     background: radial-gradient(circle, #FFD700, #FFA500);
@@ -191,7 +191,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    animation: slide 3s linear, spin 1.5s linear infinite;
+    animation: slide 4.5s linear, spin 1.5s linear infinite;
     z-index: 8;
     box-shadow: 0 0 25px #FFD700;
 }
@@ -452,7 +452,7 @@ button:hover {
     #player {
         width: 75px;
         height: 75px;
-        left: 65px;
+        left: 12%;
     }
 
     .enemy {
