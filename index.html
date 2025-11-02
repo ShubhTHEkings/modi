@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Modi Runner - Political Chase Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fullscreen Button -->
+    <button id="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen active">
+        <h1>🏃 MODI RUNNER 🏃</h1>
+        <p style="font-size: 1.5em; color: #ffd700; margin-bottom: 20px;">Political Chase Adventure!</p>
+        <div class="info-box">
+            <p>🎯 Level 1: Modi vs Rahul (1 min)</p>
+            <p>🌍 Level 2: Modi vs Trump (72 sec)</p>
+            <p>🎮 Jump, Attack, Call Allies!</p>
+        </div>
+        <button onclick="game.showLevel(1)">START GAME</button>
+    </div>
+
+    <!-- Level Intro -->
+    <div id="level-screen" class="screen">
+        <h1 id="level-title"></h1>
+        <div id="story"></div>
+        <button onclick="game.start()">BEGIN!</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div id="game-area">
+            <div id="hud">
+                <div>
+                    <div style="color: #ffd700; margin-bottom: 3px; font-size: 0.9em;">MODI</div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health"><span id="health-text">100%</span></div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div>⏱️ <span id="timer">60</span>s</div>
+                    <div>🏆 <span id="score">0</span></div>
+                </div>
+                <div style="text-align: right;">
+                    <div>👊 <span id="attacks">5</span>/5</div>
+                    <div>🎯 L<span id="level">1</span></div>
+                </div>
+            </div>
+
+            <div id="news"></div>
+            <div id="event"></div>
+            <div id="player"></div>
+            <div class="ground"></div>
+
+            <div id="controls">
+                <button class="btn" onclick="game.jump()" ontouchstart="game.jump()">⬆️ JUMP</button>
+                <button class="btn attack-btn" id="attack-btn" onclick="game.attack()" ontouchstart="game.attack()">👊 ATK(5)</button>
+                <button class="btn ally-btn" id="ally-btn-1" onclick="game.callAlly()" ontouchstart="game.callAlly()" style="display:none">🤝 THANOS</button>
+                <button class="btn ally-btn" id="ally-btn-xi" onclick="game.callAlly(0)" ontouchstart="game.callAlly(0)" style="display:none">🇨🇳 XI</button>
+                <button class="btn ally-btn" id="ally-btn-putin" onclick="game.callAlly(1)" ontouchstart="game.callAlly(1)" style="display:none">🇷🇺 PUTIN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="screen">
+        <h1 id="result-title"></h1>
+        <img id="result-img" class="result-img" src="" alt="">
+        <p id="result-msg" style="font-size: 1.4em; color: #ffd700; margin: 12px;"></p>
+        <p style="font-size: 1.6em;">🏆 Score: <span id="final-score">0</span></p>
+        <button id="next-btn" onclick="game.nextAction()">CONTINUE</button>
+    </div>
+
+    <audio id="bgm"></audio>
+    <audio id="sfx"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
