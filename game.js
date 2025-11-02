@@ -181,7 +181,7 @@ const game = {
         e.dataset.type = 'enemy';
         e.style.animationDuration = d.enemySpeed + 'ms';
         if (Math.random() > 0.7) {
-            e.style.bottom = (window.innerWidth <= 480 ? 'calc(25vh + 90px)' : 'calc(25vh + 120px)');
+            e.style.bottom = (window.innerWidth <= 480 ? 'calc(20vh + 25vh)' : 'calc(20vh + 28vh)');
         }
         document.getElementById('game-area').appendChild(e);
 
@@ -295,7 +295,7 @@ const game = {
             a.className = 'ally';
             a.style.backgroundImage = `url('${d.ally.img}')`;
             a.style.left = '40%';
-            a.style.bottom = 'calc(25vh + 50px)';
+            a.style.bottom = 'calc(20vh + 22vh)';
             document.getElementById('game-area').appendChild(a);
 
             this.playFullAudio(d.ally.entry).then(() => {
@@ -325,7 +325,7 @@ const game = {
                 a1.className = 'ally';
                 a1.style.backgroundImage = `url('${ally.img}')`;
                 a1.style.left = '35%';
-                a1.style.bottom = 'calc(25vh + 40px)';
+                a1.style.bottom = 'calc(20vh + 22vh)';
                 document.getElementById('game-area').appendChild(a1);
 
                 this.playFullAudio(ally.music).then(() => {
@@ -351,7 +351,7 @@ const game = {
                 a2.className = 'ally';
                 a2.style.backgroundImage = `url('${ally.img}')`;
                 a2.style.left = '50%';
-                a2.style.bottom = 'calc(25vh + 40px)';
+                a2.style.bottom = 'calc(20vh + 22vh)';
                 document.getElementById('game-area').appendChild(a2);
 
                 this.playFullAudio(ally.music).then(() => {

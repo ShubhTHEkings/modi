@@ -92,7 +92,11 @@ button:hover {
 }
 
 #game-screen {
-    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 20%, #90EE90 20%, #3CB371 75%, #654321 75%, #8B4513 100%);
+    background: linear-gradient(to bottom, 
+        #87CEEB 0%, #E0F6FF 15%,
+        #90EE90 15%, #3CB371 55%,
+        #228B22 55%, #2F6B2F 80%,
+        #654321 80%, #8B4513 100%);
     padding: 0;
 }
 
@@ -101,13 +105,15 @@ button:hover {
     height: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .ground {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 25vh;
+    height: 20vh;
     background: linear-gradient(to bottom, #654321, #8B4513, #654321);
     border-top: 5px solid #228B22;
     z-index: 1;
@@ -116,8 +122,8 @@ button:hover {
 
 #player {
     position: absolute;
-    left: 12%;
-    bottom: calc(25vh + 10px);
+    left: 15%;
+    bottom: calc(20vh + 20vh);
     width: 90px;
     height: 90px;
     background-size: contain;
@@ -133,8 +139,8 @@ button:hover {
 }
 
 @keyframes jump {
-    0%, 100% { bottom: calc(25vh + 10px); }
-    50% { bottom: calc(25vh + 180px); }
+    0%, 100% { bottom: calc(20vh + 20vh); }
+    50% { bottom: calc(20vh + 32vh); }
 }
 
 #player.shield::before {
@@ -156,7 +162,7 @@ button:hover {
 
 .enemy {
     position: absolute;
-    bottom: calc(25vh + 10px);
+    bottom: calc(20vh + 20vh);
     width: 80px;
     height: 80px;
     background-size: contain;
@@ -182,7 +188,7 @@ button:hover {
 
 .powerup {
     position: absolute;
-    bottom: calc(25vh + 120px);
+    bottom: calc(20vh + 28vh);
     width: 55px;
     height: 55px;
     background: radial-gradient(circle, #FFD700, #FFA500);
@@ -511,57 +517,59 @@ button:hover {
     }
 
     h1 {
-        font-size: 2.3em;
-        margin: 12px;
+        font-size: 2.4em;
+        margin: 10px;
     }
 
     button {
-        padding: 22px 42px;
-        font-size: 1.3em;
-        min-height: 75px;
+        padding: 24px 45px;
+        font-size: 1.35em;
+        min-height: 78px;
     }
 
     .info-box {
-        font-size: 1.15em;
-        padding: 16px 24px;
+        font-size: 1.2em;
+        padding: 18px 26px;
         line-height: 1.7;
     }
 
     #story {
-        font-size: 0.95em;
-        padding: 15px;
+        font-size: 1em;
+        padding: 16px;
     }
 
     #player {
-        width: 75px;
-        height: 75px;
-        left: 10%;
+        width: 80px;
+        height: 80px;
+        left: 12%;
+        bottom: calc(20vh + 18vh);
     }
 
     .enemy {
-        width: 68px;
-        height: 68px;
+        width: 72px;
+        height: 72px;
+        bottom: calc(20vh + 18vh);
     }
 
     .ally {
-        width: 80px;
-        height: 80px;
+        width: 85px;
+        height: 85px;
     }
 
     .btn {
-        padding: 22px 24px;
-        font-size: 1.15em;
-        min-width: 110px;
-        min-height: 75px;
+        padding: 24px 26px;
+        font-size: 1.2em;
+        min-width: 115px;
+        min-height: 78px;
     }
 
     #hud {
-        font-size: 0.9em;
+        font-size: 0.92em;
         padding: 10px 14px;
     }
 
     .health-bar {
-        width: 140px;
+        width: 145px;
         height: 24px;
     }
 
@@ -571,24 +579,16 @@ button:hover {
     }
 
     .ground {
-        height: 28vh;
-    }
-
-    #player {
-        bottom: calc(28vh + 10px);
-    }
-
-    .enemy {
-        bottom: calc(28vh + 10px);
+        height: 22vh;
     }
 
     .powerup {
-        bottom: calc(28vh + 100px);
+        bottom: calc(20vh + 25vh);
     }
 
     #controls {
-        bottom: 15px;
-        gap: 12px;
+        bottom: 3vh;
+        gap: 14px;
         width: 96%;
         padding: 0 2%;
     }
@@ -616,58 +616,58 @@ button:hover {
     }
 
     @keyframes jump {
-        0%, 100% { bottom: calc(28vh + 10px); }
-        50% { bottom: calc(28vh + 170px); }
+        0%, 100% { bottom: calc(20vh + 18vh); }
+        50% { bottom: calc(20vh + 30vh); }
     }
 }
 
 /* Ultra Small Mobile */
 @media (max-width: 380px) {
     h1 {
-        font-size: 1.9em;
+        font-size: 2em;
     }
 
     button {
-        padding: 18px 32px;
-        font-size: 1.05em;
+        padding: 20px 35px;
+        font-size: 1.1em;
     }
 
     .btn {
-        padding: 18px 18px;
-        font-size: 1em;
-        min-width: 95px;
-        min-height: 68px;
+        padding: 20px 20px;
+        font-size: 1.05em;
+        min-width: 100px;
+        min-height: 72px;
     }
 
     #player {
-        width: 62px;
-        height: 62px;
-        left: 8%;
+        width: 68px;
+        height: 68px;
+        left: 10%;
     }
 
     .enemy {
-        width: 56px;
-        height: 56px;
+        width: 60px;
+        height: 60px;
     }
 
     .ally {
-        width: 68px;
-        height: 68px;
+        width: 72px;
+        height: 72px;
     }
 }
 
 /* Extra Touch Optimization */
 @media (hover: none) and (pointer: coarse) {
     button {
-        min-height: 82px;
-        padding: 28px 60px;
-        font-size: 1.35em;
+        min-height: 85px;
+        padding: 30px 65px;
+        font-size: 1.4em;
     }
 
     .btn {
-        min-height: 82px;
-        padding: 28px 36px;
-        font-size: 1.2em;
+        min-height: 85px;
+        padding: 30px 38px;
+        font-size: 1.25em;
     }
 
     #controls {
