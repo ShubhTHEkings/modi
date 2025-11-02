@@ -25,19 +25,19 @@ const game = {
 <p><b>🛡️ Thanos gives 15s protection</b></p>
 <p><b>Controls:</b> Jump | Attack (5x) | Call Thanos</p>`,
             player: "modi.png",
-            modiMusic: "modiplaying background music.mpeg",
+            modiMusic: "modiplaying background music.mp3",
             enemy: "rhaul.png",
-            enemyMusic: "rhoul back ground.mp4",
-            ally: { 
-                img: "thanos.png", 
-                entry: "thanos entry .mp4",
-                special: "thanos and mode when come together to .mp4"
+            enemyMusic: "rhoul back ground.mp3",
+            ally: {
+                img: "thanos.png",
+                entry: "thanos entry.mp3",
+                special: "thanos and mode when come together to.mp3"
             },
-            enemyLose: "rhaul lose.mp4",
+            enemyLose: "rhaul lose.mp3",
             win: "meloni modi.png",
-            winMusic: "meloni modi wining song.mpeg",
+            winMusic: "meloni modi wining song.mp3",
             lose: "modi lose.png",
-            loseMusic: "modi lose.mpeg",
+            loseMusic: "modi lose.mp3",
             time: 60,
             spawnRate: 2500,
             damage: 8,
@@ -52,18 +52,18 @@ const game = {
 <p><b>🛡️ Each ally = 15s protection</b></p>
 <p><b>Controls:</b> Jump | Attack (5x) | Call Xi or Putin</p>`,
             player: "modi.png",
-            modiMusic: "modiplaying background music.mpeg",
+            modiMusic: "modiplaying background music.mp3",
             enemy: "trump face image.png",
-            enemyMusic: "trump background.mp4",
+            enemyMusic: "trump background.mp3",
             allies: [
-                { img: "xi.png", music: "xi back ground.mp4" },
-                { img: "putin.png", music: "putin background.mp4" }
+                { img: "xi.png", music: "xi back ground.mp3" },
+                { img: "putin.png", music: "putin background.mp3" }
             ],
-            enemyLose: "trump lose.mp4",
+            enemyLose: "trump lose.mp3",
             win: "meloni modi.png",
-            winMusic: "meloni modi wining song.mpeg",
+            winMusic: "meloni modi wining song.mp3",
             lose: "modi lose.png",
-            loseMusic: "modi lose.mpeg",
+            loseMusic: "modi lose.mp3",
             time: 72,
             spawnRate: 1900,
             damage: 12,
@@ -80,7 +80,7 @@ const game = {
             else if (e.code === 'KeyX' && this.level === 2) this.callAlly(0);
             else if (e.code === 'KeyP' && this.level === 2) this.callAlly(1);
         });
-        
+
         let lastTap = 0;
         document.addEventListener('touchend', (e) => {
             const now = Date.now();
@@ -96,7 +96,7 @@ const game = {
         document.getElementById('level-screen').classList.add('active');
         document.getElementById('level-title').textContent = d.title;
         document.getElementById('story').innerHTML = d.story;
-        
+
         const a = document.getElementById('bgm');
         const s = document.getElementById('sfx');
         a.pause();
@@ -106,7 +106,7 @@ const game = {
     start() {
         document.getElementById('level-screen').classList.remove('active');
         document.getElementById('game-screen').classList.add('active');
-        
+
         const d = this.data[this.level];
         this.health = 100;
         this.score = 0;
@@ -161,7 +161,7 @@ const game = {
             this.score += 5;
             document.getElementById('timer').textContent = this.time;
             this.updateUI();
-            
+
             if (this.time <= 0) {
                 clearInterval(this.gameTimer);
                 this.end(true);
@@ -198,9 +198,9 @@ const game = {
             }
         }, 50);
 
-        setTimeout(() => { 
-            if (e.parentElement) e.remove(); 
-            clearInterval(check); 
+        setTimeout(() => {
+            if (e.parentElement) e.remove();
+            clearInterval(check);
         }, d.enemySpeed);
     },
 
@@ -229,9 +229,9 @@ const game = {
         this.jumping = true;
         const p = document.getElementById('player');
         p.classList.add('jumping');
-        setTimeout(() => { 
-            p.classList.remove('jumping'); 
-            this.jumping = false; 
+        setTimeout(() => {
+            p.classList.remove('jumping');
+            this.jumping = false;
         }, 500);
     },
 
@@ -240,7 +240,7 @@ const game = {
             if (this.attacks <= 0) this.showEvent('❌ No attacks!');
             return;
         }
-        
+
         this.attacks--;
         this.score += 20;
         document.getElementById('attack-btn').textContent = `👊 ATK(${this.attacks})`;
@@ -248,10 +248,10 @@ const game = {
             document.getElementById('attack-btn').disabled = true;
         }
         this.updateUI();
-        
+
         const p = document.getElementById('player');
         p.style.transform = 'scale(1.3) rotate(20deg)';
-        
+
         let hitCount = 0;
         document.querySelectorAll('.enemy').forEach(e => {
             const r1 = e.getBoundingClientRect();
@@ -263,13 +263,13 @@ const game = {
                 hitCount++;
             }
         });
-        
+
         if (hitCount > 0) {
             this.showEvent(`💥 +${20 + hitCount * 30}!`);
         } else {
             this.showEvent('👊 +20!');
         }
-        
+
         this.updateUI();
         setTimeout(() => p.style.transform = '', 200);
     },
@@ -281,16 +281,16 @@ const game = {
             if (this.allyUsed || !this.playing) return;
             this.allyUsed = true;
             document.getElementById('ally-btn-1').disabled = true;
-            
+
             this.showNews('🌌 THANOS ARRIVES!');
-            
+
             this.activateProtection(15);
             this.health = Math.min(100, this.health + 20);
             this.score += 200;
             document.querySelectorAll('.enemy').forEach(e => e.remove());
             this.showEvent('💎 PROTECTED 15s!');
             this.updateUI();
-            
+
             const a = document.createElement('div');
             a.className = 'ally';
             a.style.backgroundImage = `url('${d.ally.img}')`;
@@ -313,14 +313,14 @@ const game = {
                 document.getElementById('ally-btn-xi').disabled = true;
                 const ally = d.allies[0];
                 this.showNews('🇨🇳 Xi Jinping arrives!');
-                
+
                 this.activateProtection(15);
                 this.health = Math.min(100, this.health + 25);
                 this.score += 250;
                 document.querySelectorAll('.enemy').forEach(e => e.remove());
                 this.showEvent('🇨🇳 PROTECTED 15s!');
                 this.updateUI();
-                
+
                 const a1 = document.createElement('div');
                 a1.className = 'ally';
                 a1.style.backgroundImage = `url('${ally.img}')`;
@@ -339,14 +339,14 @@ const game = {
                 document.getElementById('ally-btn-putin').disabled = true;
                 const ally = d.allies[1];
                 this.showNews('🇷🇺 Putin arrives!');
-                
+
                 this.activateProtection(15);
                 this.health = Math.min(100, this.health + 25);
                 this.score += 250;
                 document.querySelectorAll('.enemy').forEach(e => e.remove());
                 this.showEvent('🇷🇺 PROTECTED 15s!');
                 this.updateUI();
-                
+
                 const a2 = document.createElement('div');
                 a2.className = 'ally';
                 a2.style.backgroundImage = `url('${ally.img}')`;
@@ -367,9 +367,9 @@ const game = {
     activateProtection(seconds) {
         this.protected = true;
         document.getElementById('player').classList.add('protected');
-        
+
         if (this.protectionTimer) clearTimeout(this.protectionTimer);
-        
+
         this.protectionTimer = setTimeout(() => {
             this.protected = false;
             document.getElementById('player').classList.remove('protected');
@@ -399,7 +399,7 @@ const game = {
         clearInterval(this.powerTimer);
         clearInterval(this.gameTimer);
         if (this.protectionTimer) clearTimeout(this.protectionTimer);
-        
+
         const d = this.data[this.level];
 
         setTimeout(() => {
@@ -410,17 +410,17 @@ const game = {
             if (won) {
                 document.getElementById('result-title').textContent = '🎉 VICTORY! 🎉';
                 document.getElementById('result-img').src = d.win;
-                document.getElementById('result-msg').textContent = this.level === 1 ? 
+                document.getElementById('result-msg').textContent = this.level === 1 ?
                     'Modi wins election! 🏆' : 'Trade war won! 🌍';
-                
+
                 this.playBGM(d.winMusic);
-                document.getElementById('next-btn').textContent = this.level === 1 ? 
+                document.getElementById('next-btn').textContent = this.level === 1 ?
                     'NEXT LEVEL ➡️' : 'PLAY AGAIN 🔄';
             } else {
                 document.getElementById('result-title').textContent = '😢 DEFEAT';
                 document.getElementById('result-img').src = d.lose;
                 document.getElementById('result-msg').textContent = 'Try again! 💪';
-                
+
                 this.playBGM(d.loseMusic);
                 document.getElementById('next-btn').textContent = 'TRY AGAIN 🔄';
             }
@@ -469,7 +469,7 @@ const game = {
         a.src = file;
         a.volume = 0.4;
         a.loop = true;
-        a.play().catch(() => {});
+        a.play().catch(() => { });
     },
 
     playFullAudio(file) {

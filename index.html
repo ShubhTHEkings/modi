@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,6 +10,7 @@
     <title>Modi Runner - Political Chase Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Fullscreen Button -->
     <button id="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
@@ -59,10 +61,14 @@
 
             <div id="controls">
                 <button class="btn" onclick="game.jump()" ontouchstart="game.jump()">⬆️ JUMP</button>
-                <button class="btn attack-btn" id="attack-btn" onclick="game.attack()" ontouchstart="game.attack()">👊 ATK(5)</button>
-                <button class="btn ally-btn" id="ally-btn-1" onclick="game.callAlly()" ontouchstart="game.callAlly()" style="display:none">🤝 THANOS</button>
-                <button class="btn ally-btn" id="ally-btn-xi" onclick="game.callAlly(0)" ontouchstart="game.callAlly(0)" style="display:none">🇨🇳 XI</button>
-                <button class="btn ally-btn" id="ally-btn-putin" onclick="game.callAlly(1)" ontouchstart="game.callAlly(1)" style="display:none">🇷🇺 PUTIN</button>
+                <button class="btn attack-btn" id="attack-btn" onclick="game.attack()" ontouchstart="game.attack()">👊
+                    ATK(5)</button>
+                <button class="btn ally-btn" id="ally-btn-1" onclick="game.callAlly()" ontouchstart="game.callAlly()"
+                    style="display:none">🤝 THANOS</button>
+                <button class="btn ally-btn" id="ally-btn-xi" onclick="game.callAlly(0)" ontouchstart="game.callAlly(0)"
+                    style="display:none">🇨🇳 XI</button>
+                <button class="btn ally-btn" id="ally-btn-putin" onclick="game.callAlly(1)"
+                    ontouchstart="game.callAlly(1)" style="display:none">🇷🇺 PUTIN</button>
             </div>
         </div>
     </div>
@@ -81,4 +87,5 @@
 
     <script src="game.js"></script>
 </body>
+
 </html>
